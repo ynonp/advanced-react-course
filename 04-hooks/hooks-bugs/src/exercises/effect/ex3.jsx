@@ -20,7 +20,7 @@ export default function Ex3() {
     return () => {
       clearInterval(id)
     }
-  }, []);
+  }, [title]);
 
   return (
     <div>

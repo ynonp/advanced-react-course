@@ -6,14 +6,15 @@ import { useEffect, useRef, useState } from "react";
 
 // Find the bug and fix it
 
-function useTitle(title) {
+function useTitle(title) {  
   const prevTitleRef = useRef(document.title);
-
+  console.log(`1 Setting title to ${title}. Current title is: ${document.title}. Saved title is ${prevTitleRef.current}`);
   if (document.title !== title) document.title = title;
 
   useEffect(() => {
     return () => {
       document.title = prevTitleRef.current;
+      console.log(`2 Setting title to ${title}. Current title is: ${document.title}. Saved title is ${prevTitleRef.current}`);
     };
   }, []);
 }
@@ -25,6 +26,7 @@ function Foo() {
 
 export default function App() {
   const [show, setShow] = useState(true);
+  const x = useRef(0);
 
   return (
     <div className="App">

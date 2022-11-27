@@ -19,8 +19,7 @@ export default function WindowSize(props) {
     return () => {
       window.removeEventListener('resize', handleResize);
     }
-  }, []);
-
+  }, [updateMs]);
 
   return (
     <p>Window Size: {width}x{height}. Updating every {updateMs}</p>

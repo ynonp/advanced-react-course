@@ -22,7 +22,7 @@ export default function WindowSize(props) {
     return () => {
       window.removeEventListener('resize', handleResize);
     }
-  }, [props]);
+  }, [updateMs]);
 
 
   return (
